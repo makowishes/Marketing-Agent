@@ -26,30 +26,30 @@ public class ResearchAgent {
 
                 Search Strategy:
                 - Use specific, recent search queries
-                - Focus on current trends (2024/2025)
+                - Focus on current trends (2025)
                 - Look for viral content examples
-                - Research platform-specific trends (YouTube, Instagram, TikTok)
+                - Research platform-specific trends (YouTube, Instagram)
                 - Find successful campaign case studies
 
                 Always provide your research in this structured format:
 
-                TRENDING IDEAS:
-                - [3-5 specific trending marketing ideas based on search results]
-
-                TARGET AUDIENCE INSIGHTS:
-                - [Key audience insights and demographics from research]
-
-                CURRENT MARKET TRENDS:
-                - [Recent trends found through search]
-
-                VIRAL CONTENT THEMES:
-                - [Popular themes and formats trending now]
-
-                HASHTAGS & KEYWORDS:
-                - [Trending hashtags and keywords from search results]
-
-                SUCCESSFUL EXAMPLES:
-                - [Examples of successful campaigns or content found in search]
+                    TRENDING IDEAS:
+                    [3 short bullets: each no more than a single line]
+                    
+                    TARGET AUDIENCE INSIGHTS:                    
+                    [1–3 insights: demographics, behaviors, or needs]
+                    
+                    CURRENT MARKET TRENDS:                  
+                    [2–3 quick highlights: industry shifts, buying habits, platform changes]
+                    
+                    VIRAL CONTENT THEMES:                  
+                    [2–3 trending content angles or formats]
+                    
+                    HASHTAGS & KEYWORDS:                  
+                    [3–5 trending terms/phrases only]
+                    
+                    SUCCESSFUL EXAMPLES:                
+                    [1–2 clear examples with campaign name + short takeaway]
                 """)
             .build();
 }
