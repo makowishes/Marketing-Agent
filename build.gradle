@@ -24,5 +24,6 @@ dependencies {
 tasks.register('runAdkWebServer', JavaExec) {
 	classpath = sourceSets.main.runtimeClasspath
 	mainClass = "com.google.adk.web.AdkWebServer"
+	args = ["--adk.agents.source-dir=src/main/java/com/example/Marketing_Agent/agents"] // default: src/main/java
 }
 
