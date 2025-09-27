@@ -1,0 +1,214 @@
+.message-card {
+  margin: 15px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-message {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  margin-left: auto;
+  max-width: 70%;
+}
+
+.assistant-message {
+  max-width: 85%;
+}
+
+.error-message {
+  background: #ffebee;
+  border-left: 4px solid #f44336;
+}
+
+.youtube-card {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+  border-left: 4px solid #ff0000;
+}
+
+.instagram-card {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  border-left: 4px solid #e4405f;
+}
+
+.blog-card {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-left: 4px solid #4caf50;
+}
+
+.message-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+
+.message-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.message-meta {
+  flex: 1;
+}
+
+.message-sender {
+  font-weight: 600;
+  color: #2d3748;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.platform-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.platform-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: white;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+.message-content {
+  margin-left: 48px;
+}
+
+.content-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.youtube-preview {
+  border: 1px solid #ff0000;
+}
+
+.instagram-preview {
+  border: 1px solid #e4405f;
+}
+
+.blog-preview {
+  border: 1px solid #4caf50;
+}
+
+.preview-icon {
+  color: inherit;
+}
+
+.content-preview h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #2d3748;
+}
+
+.message-text {
+  color: #4a5568;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.message-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  margin-left: 48px;
+}
+
+.action-button {
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #4a5568;
+  transition: all 0.3s;
+}
+
+.action-button:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.remix-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.remix-button:hover {
+  opacity: 0.9;
+}
+
+.download-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  overflow: hidden;
+  top: 100%;
+  margin-top: 4px;
+}
+
+.download-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #4a5568;
+  transition: background 0.3s;
+}
+
+.dropdown-content button:hover {
+  background: #f7fafc;
+}
