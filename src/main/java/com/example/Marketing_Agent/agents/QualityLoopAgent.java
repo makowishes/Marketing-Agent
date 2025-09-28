@@ -89,6 +89,9 @@ public class QualityLoopAgent {
                 ## INSTAGRAM REELS CONTENT
                 [Improved Instagram reel]
 
+                ## TIKTOK VIDEO CONCEPT
+                [Improved Tiktok video]
+                
                 ## CONTENT STRATEGY SUMMARY
                 [Better strategy summary]
 
@@ -116,6 +119,7 @@ public class QualityLoopAgent {
                 - Research insights
                 - YouTube video script
                 - Instagram Reel concept
+                - TikTok video concept
                 - Content strategy summary
                 - Implementation notes
 
@@ -141,6 +145,9 @@ public class QualityLoopAgent {
                 ## INSTAGRAM REELS CONTENT
                 [Improved Instagram reel]
 
+                ## TIKTOK VIDEO CONCEPT
+                [Improved Tiktok video]
+                
                 ## CONTENT STRATEGY SUMMARY
                 [Better strategy summary]
 

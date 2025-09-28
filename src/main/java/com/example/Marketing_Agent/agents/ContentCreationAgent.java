@@ -99,11 +99,55 @@ public class ContentCreationAgent {
                         """)
                 .build();
 
+        LlmAgent TikTokAgent = LlmAgent.builder()
+                .name("TikTokAgent")
+                .model("gemini-2.0-flash")
+                .description("Creates viral TikTok content concepts based on research data")
+                .outputKey("tiktok_video")
+                .includeContents(NONE)
+                .instruction("""
+                        You are a TikTok Content Creator specializing in viral, short-form video ideas.
+                        Based on the research data provided, create 1 TikTok video concept optimized for growth.
+
+                        **Research Context:**
+                        {research_data}
+
+                        Consider TikTok-specific trends:
+                        - Fast hooks and engaging story arcs
+                        - Native platform behaviors (challenges, stitches, trending audio)
+                        - High retention pacing (0–30s max)
+                        - CTA focused on engagement (comments, shares, follows)
+
+                        Output *only* the TikTok concept in this format:
+
+                        CONCEPT: [Brief, attention-grabbing video concept inspired by viral trends]
+
+                        HOOK (0-2 seconds):
+                        [Powerful opening hook following current TikTok trends]
+
+                        STRUCTURE (0-30 seconds):
+                        - Clip 1 (0-3s): [Visual or action]
+                        - Clip 2 (3-10s): [Key moment or reveal]
+                        - Clip 3 (10-20s): [Payoff or emotional peak]
+                        - Clip 4 (20-30s): [Call to action or final punchline]
+
+                        TRENDING AUDIO:
+                        [1-2 suggestions based on current TikTok trends]
+
+                        CAPTION:
+                        [Short, snappy caption encouraging interaction]
+
+                        HASHTAGS:
+                        [3–5 trending TikTok hashtags relevant to the business]
+                        """)
+                .build();
+
         ParallelAgent parallelAgent = ParallelAgent.builder()
                 .name("ContentCreationAgent")
-                .subAgents(YoutubeAgent, InstagramAgent)
-                .description("runs youtube agent and instagram agent in parallel to create content")
+                .subAgents(YoutubeAgent, InstagramAgent, TikTokAgent)
+                .description("Runs YouTube, Instagram, and TikTok content agents in parallel")
                 .build();
+
 
         LlmAgent mergerAgent = LlmAgent.builder()
                 .name("SynthesisAgent")
@@ -113,35 +157,41 @@ public class ContentCreationAgent {
                 .instruction("""
                         You are an AI Assistant responsible for combining marketing content into a structured report.
                         Your primary task is to synthesize the following content pieces, clearly presenting each platform's content. Structure your response using headings for each platform. Ensure the report is coherent and integrates the key points smoothly.
-                        **Crucially: Your entire response MUST be grounded *exclusively* on the information provided in the 'Input Content' below. Do NOT add any external knowledge, facts, or details not present in these specific content pieces.**
-                        
+
                         **Input Content:**
-                        
+
                         *   **YouTube Script:**
                             {youtube_script}
-                        
+
                         *   **Instagram Reel:**
                             {instagram_reel}
-                        
+
+                        *   **TikTok Video:**
+                            {tiktok_video}
+
                         **Output Format:**
-                        
+
                         ## Complete Marketing Content Package
-                        
+
                         ### YouTube Video Script
                         (Based on YouTubeAgent's content)
                         {youtube_script}
-                        
+
                         ### Instagram Reels Content
                         (Based on InstagramAgent's content)
                         {instagram_reel}
-                        
+
+                        ### TikTok Video Concept
+                        (Based on TikTokAgent's content)
+                        {tiktok_video}
+
                         ### Content Strategy Summary
-                        [Provide a brief (2-3 sentence) summary that connects *only* the content pieces presented above, highlighting how they work together as a cohesive marketing campaign.]
-                        
+                        [Provide a brief (2–3 sentence) summary that connects *only* the content pieces presented above, highlighting how they work together as a cohesive marketing campaign.]
+
                         ### Implementation Notes
-                        [Provide practical implementation advice (2-3 sentences) based *only* on the content above, focusing on timing, cross-promotion, and platform optimization.]
-                        
-                        Output *only* the structured report following this format. Do not include introductory or concluding phrases outside this structure, and strictly adhere to using only the provided input content.
+                        [Provide practical implementation advice (2–3 sentences) based *only* on the content above, focusing on timing, cross-promotion, and platform optimization.]
+
+                        Output *only* the structured report following this format. Do not include introductory or concluding phrases outside this structure.
                         """)
                 .build();
 
