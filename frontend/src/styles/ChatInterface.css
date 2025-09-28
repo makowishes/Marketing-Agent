@@ -41,6 +41,84 @@
   color: #495057;
 }
 
+.mission-statement {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.mission-content {
+  padding: 32px;
+}
+
+.mission-content h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.mission-content > p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.getting-started {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.getting-started h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.getting-started > p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.getting-started ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.getting-started li {
+  padding: 8px 0;
+  font-size: 15px;
+  position: relative;
+  padding-left: 24px;
+  opacity: 0.9;
+}
+
+.getting-started li::before {
+  content: "•";
+  color: #fbbf24;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+}
+
+.prompt-hint {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #fbbf24;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .suggestion-chips {
   display: flex;
   gap: 10px;
