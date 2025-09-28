@@ -11,7 +11,7 @@ import static com.google.adk.agents.LlmAgent.IncludeContents.NONE;
 
 public class QualityLoopAgent {
     @Schema(
-            description = "Call this function ONLY when all marketing content meets quality standards (8/10 or higher), signaling the workflow should complete."
+            description = "Call this function ONLY when all marketing content meets quality standards (9/10 or higher), signaling the workflow should complete."
     )
     public static Map<String, Object> exitLoop(@Schema(name = "toolContext") ToolContext toolContext) {
         System.out.printf("[Quality Check Complete] exitLoop triggered\n");
@@ -54,14 +54,14 @@ public class QualityLoopAgent {
                    - Trending element integration
 
                 3. Quality Standards:
-                   - Overall package must score 8/10 or higher
+                   - Overall package must score 9/10 or higher
                    - All content must work together as a unified campaign
                    - Must effectively leverage trending insights from research
                    - Platform-specific optimizations must be present
                    - Clear content strategy and implementation plan
 
                 4. Decision Making:
-                   - If combined output meets quality standards (8/10 or higher): Call the exitLoop function immediately to complete the workflow
+                   - If combined output meets quality standards (9/10 or higher): Call the exitLoop function immediately to complete the workflow
                    - If output needs improvement: Make the improvements yourself and provide the enhanced content (DO NOT call exitLoop to continue the loop for further review)
 
                 Available state key to review:
@@ -78,7 +78,7 @@ public class QualityLoopAgent {
                 - Brand Consistency: [Score/10] - [Feedback on consistent brand voice]
                 - Implementation Strategy: [Score/10] - [Feedback on practical execution plan]
 
-                IF overall score is 8/10 or higher: Call exitLoop function immediately.
+                IF overall score is 9/10 or higher: Call exitLoop function immediately.
                 ELSE: Provide the improved marketing package with all enhancements made:
 
                 # IMPROVED MARKETING CONTENT PACKAGE
