@@ -15,7 +15,16 @@ public class QualityLoopAgent {
     )
     public static Map<String, Object> exitLoop(@Schema(name = "toolContext") ToolContext toolContext) {
         System.out.printf("[Quality Check Complete] exitLoop triggered\n");
-        toolContext.actions().setEscalate(true);
+
+        // Quick fix: Check if stream is already completed to prevent double completion
+        try {
+            toolContext.actions().setEscalate(true);
+            System.out.printf("[Quality Check Complete] Stream escalation set successfully\n");
+        } catch (IllegalStateException e) {
+            System.err.printf("[Quality Check Complete] Stream already completed: %s\n", e.getMessage());
+            // Don't rethrow - just log and continue
+        }
+
         return Map.of("status", "completed");
     }
 
@@ -27,6 +36,7 @@ public class QualityLoopAgent {
                     + " otherwise signals completion.")
             .includeContents(NONE)
             .outputKey("critic_statement")
+            .tools(FunctionTool.create(QualityLoopAgent.class, "exitLoop"))
             .instruction("""
                 You are a Quality Control Agent responsible for reviewing all marketing content.
 
@@ -90,10 +100,8 @@ public class QualityLoopAgent {
     static LlmAgent RefinerAgent = LlmAgent.builder()
             .name("RefinerAgent")
             .model("gemini-2.0-flash")
-            .description("Makes improvements to marketing content based on based on critique, or calls exitLoop if critique indicates"
-                    + " completion.")
+            .description("Makes improvements to marketing content based on critique feedback")
             .outputKey("Current_Doc_State")
-            .tools(FunctionTool.create(QualityLoopAgent.class, "exitLoop"))
             .includeContents(NONE)
             .instruction("""
                 You are a Change Agent responsible for improving marketing content based on critique feedback.
