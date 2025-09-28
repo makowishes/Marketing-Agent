@@ -7,7 +7,7 @@ public class ResearchAgent {
 
     public static LlmAgent ROOT_AGENT = LlmAgent.builder()
             .name("ResearchAgent")
-            .model("gemini-2.0-flash")
+            .model("gemini-2.5-flash")
             .description("Researches trending marketing ideas and strategies for businesses using Google Search")
             .outputKey("research_data")
             .tools(ImmutableList.of(new GoogleSearchTool()))

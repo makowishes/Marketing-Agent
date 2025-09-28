@@ -6,7 +6,7 @@ public class MarketingAgent {
 
     public static LlmAgent ROOT_AGENT = LlmAgent.builder()
             .name("MarketingAgent")
-            .model("gemini-2.0-flash")
+            .model("gemini-2.5-flash")
             .description("Complete MainWorkFlowAgent")
             .subAgents(MainWorkflowAgent.ROOT_AGENT)
             .instruction("""
@@ -16,7 +16,7 @@ public class MarketingAgent {
                 - Introduce yourself as a marketing workflow coordinator that helps small businesses get research-backed marketing insights.
                 - Before starting, **ask the business a few key questions** to collect the information the research agent will need: 
                   
-                  1. What industry is your business in? (e.g., fitness, fashion, food, SaaS)
+                  1. What industry is your business in? (e.g., fitness, fashion, food)
                   2. Who is your target audience? (e.g., age range, location, interests)
                   3. What are your main marketing goals? (e.g., brand awareness, lead generation, sales)
                   4. What is the prospective name of your company?

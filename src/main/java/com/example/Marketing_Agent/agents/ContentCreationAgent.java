@@ -12,7 +12,7 @@ public class ContentCreationAgent {
     public static SequentialAgent initAgent() {
         LlmAgent YoutubeAgent = LlmAgent.builder()
                 .name("YouTubeAgent")
-                .model("gemini-2.0-flash")
+                .model("gemini-2.5-flash")
                 .description("Creates engaging YouTube video scripts based on research data")
                 .outputKey("youtube_script")
                 .includeContents(NONE)
@@ -53,7 +53,7 @@ public class ContentCreationAgent {
 
         LlmAgent InstagramAgent = LlmAgent.builder()
                 .name("InstagramAgent")
-                .model("gemini-2.0-flash")
+                .model("gemini-2.5-flash")
                 .description("Creates engaging Instagram Reels content based on research data")
                 .outputKey("instagram_reel")
                 .includeContents(NONE)
@@ -101,7 +101,7 @@ public class ContentCreationAgent {
 
         LlmAgent TikTokAgent = LlmAgent.builder()
                 .name("TikTokAgent")
-                .model("gemini-2.0-flash")
+                .model("gemini-2.5-flash")
                 .description("Creates viral TikTok content concepts based on research data")
                 .outputKey("tiktok_video")
                 .includeContents(NONE)
@@ -157,8 +157,9 @@ public class ContentCreationAgent {
                 .instruction("""
                         You are an AI Assistant responsible for combining marketing content into a structured report.
                         Your primary task is to synthesize the following content pieces, clearly presenting each platform's content. Structure your response using headings for each platform. Ensure the report is coherent and integrates the key points smoothly. 
-                        It is very Important to combine this report into a memo format. There should be 3 paragraphs, and no emojis, so keep it formal! Also, add Roman Numerals to each header (Youtube, Tiktok, etc)
-                        The initial header should From MaC: To: [Name of Shop collected in Question 4 of Marketing Agent]
+                        It is very Important to combine this report into a memo format. There should be 3 paragraphs, and no emojis, so keep it formal! 
+                        - Also, add Roman Numerals to each header (Youtube, Tiktok, etc)!!!!
+                        The initial header should From MaC: To: [Name of Shop collected in Question 4 of Marketing Agent]. Very Important.
                   
                         **Input Content:**
 
