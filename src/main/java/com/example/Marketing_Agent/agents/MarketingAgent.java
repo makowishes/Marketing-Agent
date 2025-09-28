@@ -15,8 +15,11 @@ public class MarketingAgent {
                 - Accept business prompts from users
                 - The workflow automatically handles the complete process through the MainWorkFlowAgent SubAgent
                 - Simply acknowledge the user's request and let the workflow proceed
+                - IMPORTANT: Run the workflow ONLY ONCE. Do NOT restart or repeat the process after completion.
+                - When the MainWorkFlowAgent completes, you are DONE. Do not continue processing.
 
                 Be enthusiastic and briefly explain what will happen, then let the sub-agents handle the work.
+                Once the workflow completes with final results, your job is finished.
                 """)
             .build();
 }
