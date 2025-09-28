@@ -5,25 +5,25 @@
 
 @layer base {
   :root {
-    /* Retro-inspired base colors */
-    --background: 0 0% 96%;
-    --foreground: 0 0% 9%;
+    /* Enhanced light color palette with aura compatibility */
+    --background: 210 20% 98%;
+    --foreground: 222 84% 4.9%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 222 84% 4.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 90%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 0 0% 90%;
-    --accent-foreground: 0 0% 9%;
+    --popover-foreground: 222 84% 4.9%;
+    --primary: 222 84% 4.9%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 222 84% 4.9%;
+    --muted: 210 40% 95%;
+    --muted-foreground: 215 16% 46.9%;
+    --accent: 210 40% 95%;
+    --accent-foreground: 222 84% 4.9%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 85%;
-    --input: 0 0% 90%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91.4%;
+    --input: 214 32% 91.4%;
     --ring: 217 91% 60%;
     --radius: 0.5rem;
 
@@ -74,6 +74,12 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  html {
+    overflow-x: hidden;
   }
 }
 
@@ -139,24 +145,68 @@
     );
   }
 
+  /* ======================================
+     ✨ ENHANCED AURA BACKGROUND SYSTEM ✨
+     Beautiful gradients for light & dark modes
+     ====================================== */
+
   .top-lighting {
-    @apply absolute top-0 left-0 right-0 pointer-events-none;
-    height: 300px;
-    background: linear-gradient(
-      180deg,
-      hsl(var(--google-blue) / 0.1) 0%,
-      hsl(var(--google-blue) / 0.05) 40%,
-      transparent 100%
-    );
+    @apply pointer-events-none;
+    width: 100vw;
+    height: 100vh;
+    background:
+      radial-gradient(ellipse 800px 600px at 20% 20%, hsl(var(--google-blue) / 0.35) 0%, hsl(var(--google-blue) / 0.15) 50%, transparent 100%),
+      radial-gradient(ellipse 700px 500px at 80% 30%, hsl(var(--google-green) / 0.30) 0%, hsl(var(--google-green) / 0.12) 50%, transparent 100%),
+      radial-gradient(ellipse 600px 700px at 40% 70%, hsl(var(--google-yellow) / 0.28) 0%, hsl(var(--google-yellow) / 0.10) 50%, transparent 100%),
+      radial-gradient(ellipse 500px 600px at 90% 80%, hsl(var(--google-red) / 0.25) 0%, hsl(var(--google-red) / 0.08) 50%, transparent 100%),
+      radial-gradient(ellipse 900px 400px at 10% 50%, hsl(var(--google-blue) / 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 800px 300px at 90% 60%, hsl(var(--google-green) / 0.12) 0%, transparent 70%),
+      linear-gradient(
+        135deg,
+        hsl(var(--background) / 0.8) 0%,
+        hsl(var(--background) / 0.95) 25%,
+        hsl(var(--background) / 0.7) 50%,
+        hsl(var(--background) / 0.95) 75%,
+        hsl(var(--background) / 0.8) 100%
+      );
+    animation: auraFloat 25s ease-in-out infinite;
   }
 
   .dark .top-lighting {
-    background: linear-gradient(
-      180deg,
-      hsl(var(--google-blue) / 0.08) 0%,
-      hsl(var(--google-blue) / 0.03) 40%,
-      transparent 100%
-    );
+    background:
+      radial-gradient(ellipse 800px 600px at 20% 20%, hsl(var(--google-blue) / 0.45) 0%, hsl(var(--google-blue) / 0.20) 50%, transparent 100%),
+      radial-gradient(ellipse 700px 500px at 80% 30%, hsl(var(--google-green) / 0.40) 0%, hsl(var(--google-green) / 0.18) 50%, transparent 100%),
+      radial-gradient(ellipse 600px 700px at 40% 70%, hsl(var(--google-yellow) / 0.38) 0%, hsl(var(--google-yellow) / 0.15) 50%, transparent 100%),
+      radial-gradient(ellipse 500px 600px at 90% 80%, hsl(var(--google-red) / 0.35) 0%, hsl(var(--google-red) / 0.12) 50%, transparent 100%),
+      radial-gradient(ellipse 900px 400px at 10% 50%, hsl(var(--google-blue) / 0.22) 0%, transparent 70%),
+      radial-gradient(ellipse 800px 300px at 90% 60%, hsl(var(--google-green) / 0.18) 0%, transparent 70%),
+      linear-gradient(
+        135deg,
+        hsl(var(--background) / 0.6) 0%,
+        hsl(var(--background) / 0.90) 25%,
+        hsl(var(--background) / 0.5) 50%,
+        hsl(var(--background) / 0.90) 75%,
+        hsl(var(--background) / 0.6) 100%
+      );
+  }
+
+  @keyframes auraFloat {
+    0%, 100% {
+      background-position: 20% 20%, 80% 30%, 40% 70%, 90% 80%, 0% 0%;
+      filter: blur(0px);
+    }
+    25% {
+      background-position: 25% 25%, 75% 35%, 45% 65%, 85% 85%, 0% 0%;
+      filter: blur(0.5px);
+    }
+    50% {
+      background-position: 30% 15%, 85% 25%, 35% 75%, 95% 75%, 0% 0%;
+      filter: blur(1px);
+    }
+    75% {
+      background-position: 15% 30%, 70% 40%, 50% 60%, 80% 90%, 0% 0%;
+      filter: blur(0.5px);
+    }
   }
 
   .home-element {
@@ -447,22 +497,89 @@
       0 4px 8px hsl(var(--google-blue) / 0.3);
   }
 
-  /* Cozy ambient lighting effects */
+  /* Enhanced ambient lighting effects with aura design */
   .ambient-glow {
     @apply absolute pointer-events-none;
-    width: 200px;
-    height: 200px;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
     background: radial-gradient(circle,
-      hsl(var(--google-yellow) / 0.1) 0%,
-      hsl(var(--google-orange) / 0.05) 40%,
-      transparent 70%);
-    animation: ambientPulse 4s ease-in-out infinite;
+      hsl(var(--google-yellow) / 0.40) 0%,
+      hsl(var(--google-blue) / 0.35) 20%,
+      hsl(var(--google-green) / 0.25) 40%,
+      hsl(var(--google-red) / 0.20) 60%,
+      hsl(var(--google-blue) / 0.10) 80%,
+      transparent 100%);
+    animation: ambientPulse 10s ease-in-out infinite;
+    filter: blur(0.5px);
+  }
+
+  .dark .ambient-glow {
+    background: radial-gradient(circle,
+      hsl(var(--google-yellow) / 0.50) 0%,
+      hsl(var(--google-blue) / 0.45) 20%,
+      hsl(var(--google-green) / 0.35) 40%,
+      hsl(var(--google-red) / 0.25) 60%,
+      hsl(var(--google-blue) / 0.15) 80%,
+      transparent 100%);
   }
 
   @keyframes ambientPulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.2); opacity: 1; }
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 0.4;
+    }
+    33% {
+      transform: scale(1.1) rotate(120deg);
+      opacity: 0.7;
+    }
+    66% {
+      transform: scale(0.9) rotate(240deg);
+      opacity: 0.5;
+    }
+  }
+
+  /* Content area glow enhancement */
+  .content-aura {
+    @apply relative;
+  }
+
+  .content-aura::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: radial-gradient(ellipse at center,
+      hsl(var(--google-blue) / 0.20) 0%,
+      hsl(var(--google-green) / 0.15) 25%,
+      hsl(var(--google-yellow) / 0.12) 50%,
+      hsl(var(--google-red) / 0.08) 75%,
+      transparent 100%);
+    border-radius: inherit;
+    filter: blur(3px);
+    animation: contentGlow 15s ease-in-out infinite;
+  }
+
+  .dark .content-aura::before {
+    background: radial-gradient(ellipse at center,
+      hsl(var(--google-blue) / 0.30) 0%,
+      hsl(var(--google-green) / 0.25) 25%,
+      hsl(var(--google-yellow) / 0.20) 50%,
+      hsl(var(--google-red) / 0.15) 75%,
+      transparent 100%);
+  }
+
+  @keyframes contentGlow {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1) rotate(0deg);
+    }
+    33% {
+      opacity: 0.9;
+      transform: scale(1.03) rotate(1deg);
+    }
+    66% {
+      opacity: 0.8;
+      transform: scale(1.06) rotate(-1deg);
+    }
   }
 
   /* Creative form inputs */

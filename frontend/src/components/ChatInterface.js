@@ -114,11 +114,11 @@ function ChatInterface() {
         </div>
         <div className="text-center mb-8 md:mb-12">
           <div className="retro-section max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-9 mb-6">
               <div className="w-12 h-12 bg-accent-blue/10 border-2 border-accent-blue rounded-lg flex items-center justify-center">
                 <Coffee className="h-6 w-6 text-accent-blue" />
               </div>
-              <div className="bg-accent-yellow/10 border-2 border-accent-yellow p-4">
+              <div className="bg-accent-yellow/10 border-2 border-accent-yellow p-2">
                 <h1 className="text-4xl md:text-5xl font-black text-foreground tracking-tight">
                   MAC
                 </h1>
@@ -127,14 +127,6 @@ function ChatInterface() {
                 <Heart className="h-6 w-6 text-accent-red" />
               </div>
             </div>
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="text-xl md:text-2xl font-semibold text-muted-foreground">
-                Your Marketing Agent C
-              </span>
-            </div>
-            <p className="text-lg text-muted-foreground leading-relaxed font-medium">
-              Complete marketing content packages crafted with care for small businesses
-            </p>
           </div>
         </div>
       </div>
@@ -142,7 +134,7 @@ function ChatInterface() {
       {/* Messages Area */}
       <div className="flex-1 max-w-4xl mx-auto w-full">
         {!hasStartedChat && (
-          <div className="retro-card-creative p-8 md:p-12 mb-8 transition-all duration-300">
+          <div className="retro-card-creative content-aura p-8 md:p-12 mb-8 transition-all duration-300">
             <div className="text-center mb-8">
               <div className="bg-accent-green/10 border-2 border-accent-green p-4 mb-6 inline-block">
                 <div className="flex items-center justify-center gap-2">
@@ -151,8 +143,8 @@ function ChatInterface() {
                   <Sparkles className="h-5 w-5 text-accent-green" />
                 </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-foreground mb-6 tracking-tight">
-                MAC - Helping Small Businesses Shine
+              <h2 className="text-2xl md:text-3xl font-black text-foreground mb-6 tracking-tight">
+                Your Marketing Agent-C
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto font-medium">
                 We create comprehensive marketing content that drives growth. Our AI generates a complete package including YouTube scripts, Instagram content, and blog posts - all tailored to your unique business and audience.
@@ -167,7 +159,7 @@ function ChatInterface() {
                 Let's Get Started
               </h3>
               <p className="text-muted-foreground mb-8 text-lg font-medium">
-                Share some details about your business to receive your personalized marketing content package:
+                We understand the unique challenges small businesses face in today's competitive market. Share some details about your business to receive your personalized marketing content package designed specifically for your growth:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -226,7 +218,7 @@ function ChatInterface() {
       {/* Input Area */}
       <div className="pt-6 mt-8">
         <div className="max-w-4xl mx-auto">
-          <div className="retro-section">
+          <div className="retro-section content-aura">
             <div className="flex gap-4">
               <Textarea
                 ref={inputRef}
