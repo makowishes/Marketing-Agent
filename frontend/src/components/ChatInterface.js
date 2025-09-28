@@ -113,76 +113,88 @@ function ChatInterface() {
           <ThemeToggle />
         </div>
         <div className="text-center mb-8 md:mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Coffee className="h-8 w-8 text-accent-green" />
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-              MAC
-            </h1>
-            <Heart className="h-6 w-6 text-accent-red" />
+          <div className="retro-section max-w-2xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-accent-blue/10 border-2 border-accent-blue rounded-lg flex items-center justify-center">
+                <Coffee className="h-6 w-6 text-accent-blue" />
+              </div>
+              <h1 className="text-4xl md:text-5xl font-black text-foreground tracking-tight">
+                MAC
+              </h1>
+              <div className="w-12 h-12 bg-accent-red/10 border-2 border-accent-red rounded-lg flex items-center justify-center">
+                <Heart className="h-6 w-6 text-accent-red" />
+              </div>
+            </div>
+            <div className="bg-accent-yellow/10 border-2 border-accent-yellow p-4 mb-4">
+              <span className="text-2xl md:text-3xl font-bold text-foreground">
+                Your Marketing Agent C
+              </span>
+            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed font-medium">
+              Complete marketing content packages crafted with care for small businesses
+            </p>
           </div>
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-xl md:text-2xl font-semibold text-muted-foreground">
-              Your Marketing Agent C
-            </span>
-          </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Complete marketing content packages crafted with care for small businesses
-          </p>
         </div>
       </div>
 
       {/* Messages Area */}
       <div className="flex-1 max-w-4xl mx-auto w-full">
         {!hasStartedChat && (
-          <div className="bg-card rounded-3xl border border-border shadow-soft p-8 md:p-12 mb-8">
+          <div className="retro-card p-8 md:p-12 mb-8 transition-all duration-300">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-medium mb-6">
-                <Sparkles className="h-4 w-4" />
-                Our Mission
+              <div className="bg-accent-green/10 border-2 border-accent-green p-4 mb-6 inline-block">
+                <div className="flex items-center justify-center gap-2">
+                  <Sparkles className="h-5 w-5 text-accent-green" />
+                  <h3 className="text-xl font-black text-foreground">OUR MISSION</h3>
+                  <Sparkles className="h-5 w-5 text-accent-green" />
+                </div>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-3xl md:text-4xl font-black text-foreground mb-6 tracking-tight">
                 MAC - Helping Small Businesses Shine
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto font-medium">
                 We create comprehensive marketing content that drives growth. Our AI generates a complete package including YouTube scripts, Instagram content, and blog posts - all tailored to your unique business and audience.
               </p>
             </div>
 
-            <div className="bg-muted rounded-2xl p-6 md:p-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Coffee className="h-5 w-5 text-accent-orange" />
+            <div className="retro-section">
+              <h3 className="text-2xl font-black text-foreground mb-6 flex items-center gap-3">
+                <div className="w-8 h-8 bg-accent-yellow/20 border-2 border-accent-yellow flex items-center justify-center">
+                  <Coffee className="h-4 w-4 text-accent-yellow" />
+                </div>
                 Let's Get Started
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-8 text-lg font-medium">
                 Share some details about your business to receive your personalized marketing content package:
               </p>
 
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm font-medium text-card-foreground">
-                    <div className="w-2 h-2 bg-accent-green rounded-full"></div>
-                    What type of business do you own?
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 bg-accent-green/5 border border-accent-green/20">
+                    <div className="w-4 h-4 bg-accent-green border border-accent-green/50"></div>
+                    <span className="font-bold text-card-foreground">What type of business do you own?</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm font-medium text-card-foreground">
-                    <div className="w-2 h-2 bg-accent-blue rounded-full"></div>
-                    Who is your target audience?
+                  <div className="flex items-center gap-3 p-3 bg-accent-blue/5 border border-accent-blue/20">
+                    <div className="w-4 h-4 bg-accent-blue border border-accent-blue/50"></div>
+                    <span className="font-bold text-card-foreground">Who is your target audience?</span>
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm font-medium text-card-foreground">
-                    <div className="w-2 h-2 bg-accent-red rounded-full"></div>
-                    What products or services do you offer?
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 bg-accent-red/5 border border-accent-red/20">
+                    <div className="w-4 h-4 bg-accent-red border border-accent-red/50"></div>
+                    <span className="font-bold text-card-foreground">What products or services do you offer?</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm font-medium text-card-foreground">
-                    <div className="w-2 h-2 bg-accent-yellow rounded-full"></div>
-                    Any specific marketing goals?
+                  <div className="flex items-center gap-3 p-3 bg-accent-yellow/5 border border-accent-yellow/20">
+                    <div className="w-4 h-4 bg-accent-yellow border border-accent-yellow/50"></div>
+                    <span className="font-bold text-card-foreground">Any specific marketing goals?</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-4 border-l-4 border-l-accent-yellow">
+              <div className="bg-accent-yellow/10 border-2 border-accent-yellow p-6">
                 <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-card-foreground">💡 Example:</span> "I own a local coffee shop serving artisanal coffee and pastries. My target audience is young professionals and college students downtown. I want to promote our new seasonal drinks and cozy study environment."
+                  <span className="font-black text-card-foreground text-base">💡 EXAMPLE:</span><br />
+                  <span className="font-medium">"I own a local coffee shop serving artisanal coffee and pastries. My target audience is young professionals and college students downtown. I want to promote our new seasonal drinks and cozy study environment."</span>
                 </p>
               </div>
             </div>
@@ -212,7 +224,7 @@ function ChatInterface() {
       {/* Input Area */}
       <div className="pt-6 mt-8">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-card rounded-2xl border border-border shadow-soft p-4">
+          <div className="retro-section">
             <div className="flex gap-4">
               <Textarea
                 ref={inputRef}
@@ -220,16 +232,16 @@ function ChatInterface() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Tell us about your business, target audience, and marketing goals..."
-                className="min-h-[60px] border-0 bg-muted focus-visible:ring-0 resize-none text-base"
-                rows="2"
+                className="min-h-[80px] border-2 border-border bg-card focus-visible:ring-0 focus-visible:border-accent-blue resize-none text-base font-medium placeholder:text-muted-foreground/70"
+                rows="3"
               />
               <Button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isLoading}
-                className="self-end h-12 w-12 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-50"
+                className="retro-button self-end h-16 w-16 bg-accent-blue text-white hover:bg-accent-blue/90 disabled:opacity-50 disabled:cursor-not-allowed"
                 size="icon"
               >
-                <Send className="h-5 w-5" />
+                <Send className="h-6 w-6" />
               </Button>
             </div>
           </div>

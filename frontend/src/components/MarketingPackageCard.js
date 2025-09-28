@@ -46,14 +46,14 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
   if (message.type === 'user') {
     return (
       <div className="flex justify-end mb-6">
-        <div className="bg-primary text-primary-foreground rounded-2xl px-6 py-4 max-w-3xl shadow-soft">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-6 h-6 bg-primary-foreground/20 rounded-full flex items-center justify-center">
-              <User size={14} />
+        <div className="retro-card bg-accent-blue text-white px-6 py-4 max-w-3xl">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-8 bg-white/20 border-2 border-white/30 flex items-center justify-center">
+              <User size={16} />
             </div>
-            <span className="text-sm font-medium opacity-90">You</span>
+            <span className="text-sm font-black uppercase tracking-wider">You</span>
           </div>
-          <p className="text-base leading-relaxed">{message.content}</p>
+          <p className="text-base leading-relaxed font-medium">{message.content}</p>
         </div>
       </div>
     );
@@ -82,172 +82,171 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
 
   // Marketing package display
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Package Header */}
-      <Card className="border-border bg-card shadow-soft">
-        <CardHeader className="text-center pb-6">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-              <Package size={20} className="text-primary-foreground" />
-            </div>
-            <div>
-              <CardTitle className="text-2xl font-bold text-card-foreground">MAC - Your Marketing Agent C</CardTitle>
-              <div className="flex items-center gap-1 justify-center mt-1">
-                <Heart size={12} className="text-accent-red" />
-                <span className="text-sm text-muted-foreground">Complete Marketing Package</span>
-                <Heart size={12} className="text-accent-red" />
+      <div className="retro-card">
+        <div className="text-center p-8">
+          <div className="bg-accent-green/10 border-2 border-accent-green p-6 mb-6 inline-block">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 bg-accent-green/20 border-2 border-accent-green flex items-center justify-center">
+                <Package size={24} className="text-accent-green" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-black text-card-foreground">MAC - YOUR MARKETING AGENT C</h2>
+                <div className="flex items-center gap-2 justify-center mt-2">
+                  <Heart size={16} className="text-accent-red" />
+                  <span className="text-base font-black text-muted-foreground uppercase tracking-wider">Complete Marketing Package</span>
+                  <Heart size={16} className="text-accent-red" />
+                </div>
               </div>
             </div>
           </div>
-          <div className="bg-muted rounded-xl p-4">
-            <h3 className="text-lg font-semibold text-card-foreground mb-2">🎯 Your Personalized Content Package</h3>
-            <p className="text-muted-foreground">Here are your custom scripts crafted with care for your business needs</p>
+          <div className="bg-accent-yellow/10 border-2 border-accent-yellow p-6">
+            <h3 className="text-xl font-black text-card-foreground mb-3">🎯 YOUR PERSONALIZED CONTENT PACKAGE</h3>
+            <p className="text-muted-foreground font-medium text-lg">Here are your custom scripts crafted with care for your business needs</p>
           </div>
-        </CardHeader>
-      </Card>
+        </div>
+      </div>
 
       {/* Scripts Grid */}
       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
         {/* YouTube Script */}
-        <Card className="border-border bg-card shadow-soft card-hover">
-          <CardHeader className="pb-4">
-            <div className="flex items-center justify-between">
+        <div className="retro-card card-hover">
+          <div className="p-6">
+            <div className="bg-accent-red/10 border-2 border-accent-red p-4 mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
-                  <Youtube size={20} className="text-red-600" />
+                <div className="w-12 h-12 bg-accent-red/20 border-2 border-accent-red flex items-center justify-center">
+                  <Youtube size={24} className="text-accent-red" />
                 </div>
-                <CardTitle className="text-lg text-card-foreground">YouTube Script</CardTitle>
+                <h3 className="text-xl font-black text-card-foreground uppercase tracking-wider">YouTube Script</h3>
               </div>
             </div>
-            <div className="flex gap-2 mt-4">
+            <div className="grid grid-cols-3 gap-2 mb-4">
               <Button
                 onClick={() => handleRegenerateScript('youtube')}
                 disabled={regeneratingScript === 'youtube'}
-                variant="outline"
+                className="retro-button bg-accent-red text-white hover:bg-accent-red/90 text-xs font-black uppercase"
                 size="sm"
-                className="flex-1"
               >
-                <RefreshCw size={14} className={regeneratingScript === 'youtube' ? 'animate-spin' : ''} />
-                {regeneratingScript === 'youtube' ? 'Regenerating...' : 'Regenerate'}
+                <RefreshCw size={12} className={regeneratingScript === 'youtube' ? 'animate-spin' : ''} />
+                {regeneratingScript === 'youtube' ? 'Regen...' : 'Regen'}
               </Button>
               <Button
                 onClick={() => copyToClipboard(message.scripts?.youtube || message.content, 'YouTube')}
-                variant="outline"
+                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
                 size="sm"
               >
-                <Copy size={14} />
+                <Copy size={12} />
+                Copy
               </Button>
               <Button
                 onClick={() => downloadScript(message.scripts?.youtube || message.content, 'YouTube')}
-                variant="outline"
+                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
                 size="sm"
               >
-                <Download size={14} />
+                <Download size={12} />
+                Save
               </Button>
             </div>
-          </CardHeader>
-          <CardContent className="pt-0">
-            <div className="bg-muted rounded-xl p-4 max-h-80 overflow-y-auto">
-              <pre className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed font-sans">
+            <div className="bg-muted border-2 border-border p-4 max-h-80 overflow-y-auto">
+              <pre className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed font-mono">
                 {formatScriptContent(message.scripts?.youtube || message.content)}
               </pre>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Instagram Script */}
-        <Card className="border-border bg-card shadow-soft card-hover">
-          <CardHeader className="pb-4">
-            <div className="flex items-center justify-between">
+        <div className="retro-card card-hover">
+          <div className="p-6">
+            <div className="bg-accent-red/10 border-2 border-accent-red p-4 mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-pink-50 rounded-xl flex items-center justify-center">
-                  <Instagram size={20} className="text-pink-600" />
+                <div className="w-12 h-12 bg-accent-red/20 border-2 border-accent-red flex items-center justify-center">
+                  <Instagram size={24} className="text-accent-red" />
                 </div>
-                <CardTitle className="text-lg text-card-foreground">Instagram Content</CardTitle>
+                <h3 className="text-xl font-black text-card-foreground uppercase tracking-wider">Instagram Content</h3>
               </div>
             </div>
-            <div className="flex gap-2 mt-4">
+            <div className="grid grid-cols-3 gap-2 mb-4">
               <Button
                 onClick={() => handleRegenerateScript('instagram')}
                 disabled={regeneratingScript === 'instagram'}
-                variant="outline"
+                className="retro-button bg-accent-red text-white hover:bg-accent-red/90 text-xs font-black uppercase"
                 size="sm"
-                className="flex-1"
               >
-                <RefreshCw size={14} className={regeneratingScript === 'instagram' ? 'animate-spin' : ''} />
-                {regeneratingScript === 'instagram' ? 'Regenerating...' : 'Regenerate'}
+                <RefreshCw size={12} className={regeneratingScript === 'instagram' ? 'animate-spin' : ''} />
+                {regeneratingScript === 'instagram' ? 'Regen...' : 'Regen'}
               </Button>
               <Button
                 onClick={() => copyToClipboard(message.scripts?.instagram || message.content, 'Instagram')}
-                variant="outline"
+                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
                 size="sm"
               >
-                <Copy size={14} />
+                <Copy size={12} />
+                Copy
               </Button>
               <Button
                 onClick={() => downloadScript(message.scripts?.instagram || message.content, 'Instagram')}
-                variant="outline"
+                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
                 size="sm"
               >
-                <Download size={14} />
+                <Download size={12} />
+                Save
               </Button>
             </div>
-          </CardHeader>
-          <CardContent className="pt-0">
-            <div className="bg-muted rounded-xl p-4 max-h-80 overflow-y-auto">
-              <pre className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed font-sans">
+            <div className="bg-muted border-2 border-border p-4 max-h-80 overflow-y-auto">
+              <pre className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed font-mono">
                 {formatScriptContent(message.scripts?.instagram || message.content)}
               </pre>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Blog Script */}
-        <Card className="border-border bg-card shadow-soft card-hover">
-          <CardHeader className="pb-4">
-            <div className="flex items-center justify-between">
+        <div className="retro-card card-hover">
+          <div className="p-6">
+            <div className="bg-accent-blue/10 border-2 border-accent-blue p-4 mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center">
-                  <FileText size={20} className="text-blue-600" />
+                <div className="w-12 h-12 bg-accent-blue/20 border-2 border-accent-blue flex items-center justify-center">
+                  <FileText size={24} className="text-accent-blue" />
                 </div>
-                <CardTitle className="text-lg text-card-foreground">Blog Post</CardTitle>
+                <h3 className="text-xl font-black text-card-foreground uppercase tracking-wider">Blog Post</h3>
               </div>
             </div>
-            <div className="flex gap-2 mt-4">
+            <div className="grid grid-cols-3 gap-2 mb-4">
               <Button
                 onClick={() => handleRegenerateScript('blog')}
                 disabled={regeneratingScript === 'blog'}
-                variant="outline"
+                className="retro-button bg-accent-blue text-white hover:bg-accent-blue/90 text-xs font-black uppercase"
                 size="sm"
-                className="flex-1"
               >
-                <RefreshCw size={14} className={regeneratingScript === 'blog' ? 'animate-spin' : ''} />
-                {regeneratingScript === 'blog' ? 'Regenerating...' : 'Regenerate'}
+                <RefreshCw size={12} className={regeneratingScript === 'blog' ? 'animate-spin' : ''} />
+                {regeneratingScript === 'blog' ? 'Regen...' : 'Regen'}
               </Button>
               <Button
                 onClick={() => copyToClipboard(message.scripts?.blog || message.content, 'Blog')}
-                variant="outline"
+                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
                 size="sm"
               >
-                <Copy size={14} />
+                <Copy size={12} />
+                Copy
               </Button>
               <Button
                 onClick={() => downloadScript(message.scripts?.blog || message.content, 'Blog')}
-                variant="outline"
+                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
                 size="sm"
               >
-                <Download size={14} />
+                <Download size={12} />
+                Save
               </Button>
             </div>
-          </CardHeader>
-          <CardContent className="pt-0">
-            <div className="bg-muted rounded-xl p-4 max-h-80 overflow-y-auto">
-              <pre className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed font-sans">
+            <div className="bg-muted border-2 border-border p-4 max-h-80 overflow-y-auto">
+              <pre className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed font-mono">
                 {formatScriptContent(message.scripts?.blog || message.content)}
               </pre>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   );
