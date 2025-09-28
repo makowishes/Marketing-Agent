@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ChatInterface from './components/ChatInterface';
-import GettingStartedGuide from './components/GettingStartedGuide';
-import './styles/App.css';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
-  const [showGuide, setShowGuide] = useState(true);
-
   return (
-    <div className="app">
-      <div className="app-container">
-        <GettingStartedGuide isOpen={showGuide} onToggle={() => setShowGuide(!showGuide)} />
-        <ChatInterface />
+    <ThemeProvider>
+      <div className="min-h-screen bg-background">
+        <div className="container mx-auto max-w-4xl">
+          <ChatInterface />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
