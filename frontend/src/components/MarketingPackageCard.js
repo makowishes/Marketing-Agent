@@ -46,7 +46,12 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
   if (message.type === 'user') {
     return (
       <div className="flex justify-end mb-6">
-        <div className="retro-card bg-accent-blue text-white px-6 py-4 max-w-3xl">
+        <div className="px-6 py-4 max-w-3xl border-2 border-blue-500 shadow-lg" style={{
+          backgroundColor: '#4285F4',
+          color: 'white',
+          boxShadow: '4px 4px 0px #3367D6',
+          borderRadius: '8px'
+        }}>
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-8 bg-white/20 border-2 border-white/30 flex items-center justify-center">
               <User size={16} />
@@ -84,7 +89,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
   return (
     <div className="space-y-8">
       {/* Package Header */}
-      <div className="retro-card">
+      <div className="retro-card-creative">
         <div className="text-center p-8">
           <div className="bg-accent-green/10 border-2 border-accent-green p-6 mb-6 inline-block">
             <div className="flex items-center justify-center gap-4">
@@ -92,7 +97,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
                 <Package size={24} className="text-accent-green" />
               </div>
               <div>
-                <h2 className="text-3xl font-black text-card-foreground">MAC - YOUR MARKETING AGENT C</h2>
+                <h2 className="text-3xl font-black text-card-foreground title-creative">MAC - YOUR MARKETING AGENT C</h2>
                 <div className="flex items-center gap-2 justify-center mt-2">
                   <Heart size={16} className="text-accent-red" />
                   <span className="text-base font-black text-muted-foreground uppercase tracking-wider">Complete Marketing Package</span>
@@ -111,7 +116,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
       {/* Scripts Grid */}
       <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
         {/* YouTube Script */}
-        <div className="retro-card card-hover">
+        <div className="retro-card-creative card-hover">
           <div className="p-6">
             <div className="bg-accent-red/10 border-2 border-accent-red p-4 mb-4">
               <div className="flex items-center gap-3">
@@ -125,7 +130,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               <Button
                 onClick={() => handleRegenerateScript('youtube')}
                 disabled={regeneratingScript === 'youtube'}
-                className="retro-button bg-accent-red text-white hover:bg-accent-red/90 text-xs font-black uppercase"
+                className="button-creative text-white text-xs font-black uppercase"
                 size="sm"
               >
                 <RefreshCw size={12} className={regeneratingScript === 'youtube' ? 'animate-spin' : ''} />
@@ -133,7 +138,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               </Button>
               <Button
                 onClick={() => copyToClipboard(message.scripts?.youtube || message.content, 'YouTube')}
-                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
+                className="button-creative bg-card text-foreground border-2 border-border text-xs font-black uppercase"
                 size="sm"
               >
                 <Copy size={12} />
@@ -141,7 +146,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               </Button>
               <Button
                 onClick={() => downloadScript(message.scripts?.youtube || message.content, 'YouTube')}
-                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
+                className="button-creative bg-card text-foreground border-2 border-border text-xs font-black uppercase"
                 size="sm"
               >
                 <Download size={12} />
@@ -157,7 +162,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
         </div>
 
         {/* Instagram Script */}
-        <div className="retro-card card-hover">
+        <div className="retro-card-creative card-hover">
           <div className="p-6">
             <div className="bg-accent-red/10 border-2 border-accent-red p-4 mb-4">
               <div className="flex items-center gap-3">
@@ -171,7 +176,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               <Button
                 onClick={() => handleRegenerateScript('instagram')}
                 disabled={regeneratingScript === 'instagram'}
-                className="retro-button bg-accent-red text-white hover:bg-accent-red/90 text-xs font-black uppercase"
+                className="button-creative text-white text-xs font-black uppercase"
                 size="sm"
               >
                 <RefreshCw size={12} className={regeneratingScript === 'instagram' ? 'animate-spin' : ''} />
@@ -179,7 +184,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               </Button>
               <Button
                 onClick={() => copyToClipboard(message.scripts?.instagram || message.content, 'Instagram')}
-                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
+                className="button-creative bg-card text-foreground border-2 border-border text-xs font-black uppercase"
                 size="sm"
               >
                 <Copy size={12} />
@@ -187,7 +192,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               </Button>
               <Button
                 onClick={() => downloadScript(message.scripts?.instagram || message.content, 'Instagram')}
-                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
+                className="button-creative bg-card text-foreground border-2 border-border text-xs font-black uppercase"
                 size="sm"
               >
                 <Download size={12} />
@@ -203,7 +208,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
         </div>
 
         {/* Blog Script */}
-        <div className="retro-card card-hover">
+        <div className="retro-card-creative card-hover">
           <div className="p-6">
             <div className="bg-accent-blue/10 border-2 border-accent-blue p-4 mb-4">
               <div className="flex items-center gap-3">
@@ -217,7 +222,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               <Button
                 onClick={() => handleRegenerateScript('blog')}
                 disabled={regeneratingScript === 'blog'}
-                className="retro-button bg-accent-blue text-white hover:bg-accent-blue/90 text-xs font-black uppercase"
+                className="button-creative text-white text-xs font-black uppercase"
                 size="sm"
               >
                 <RefreshCw size={12} className={regeneratingScript === 'blog' ? 'animate-spin' : ''} />
@@ -225,7 +230,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               </Button>
               <Button
                 onClick={() => copyToClipboard(message.scripts?.blog || message.content, 'Blog')}
-                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
+                className="button-creative bg-card text-foreground border-2 border-border text-xs font-black uppercase"
                 size="sm"
               >
                 <Copy size={12} />
@@ -233,7 +238,7 @@ function MarketingPackageCard({ message, onRegenerateScript }) {
               </Button>
               <Button
                 onClick={() => downloadScript(message.scripts?.blog || message.content, 'Blog')}
-                className="retro-button bg-card text-foreground border-2 border-border hover:bg-accent/50 text-xs font-black uppercase"
+                className="button-creative bg-card text-foreground border-2 border-border text-xs font-black uppercase"
                 size="sm"
               >
                 <Download size={12} />

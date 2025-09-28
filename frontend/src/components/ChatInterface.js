@@ -118,15 +118,17 @@ function ChatInterface() {
               <div className="w-12 h-12 bg-accent-blue/10 border-2 border-accent-blue rounded-lg flex items-center justify-center">
                 <Coffee className="h-6 w-6 text-accent-blue" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-black text-foreground tracking-tight">
-                MAC
-              </h1>
+              <div className="bg-accent-yellow/10 border-2 border-accent-yellow p-4">
+                <h1 className="text-4xl md:text-5xl font-black text-foreground tracking-tight">
+                  MAC
+                </h1>
+              </div>
               <div className="w-12 h-12 bg-accent-red/10 border-2 border-accent-red rounded-lg flex items-center justify-center">
                 <Heart className="h-6 w-6 text-accent-red" />
               </div>
             </div>
-            <div className="bg-accent-yellow/10 border-2 border-accent-yellow p-4 mb-4">
-              <span className="text-2xl md:text-3xl font-bold text-foreground">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-xl md:text-2xl font-semibold text-muted-foreground">
                 Your Marketing Agent C
               </span>
             </div>
@@ -140,7 +142,7 @@ function ChatInterface() {
       {/* Messages Area */}
       <div className="flex-1 max-w-4xl mx-auto w-full">
         {!hasStartedChat && (
-          <div className="retro-card p-8 md:p-12 mb-8 transition-all duration-300">
+          <div className="retro-card-creative p-8 md:p-12 mb-8 transition-all duration-300">
             <div className="text-center mb-8">
               <div className="bg-accent-green/10 border-2 border-accent-green p-4 mb-6 inline-block">
                 <div className="flex items-center justify-center gap-2">
@@ -171,21 +173,21 @@ function ChatInterface() {
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-3 bg-accent-green/5 border border-accent-green/20">
-                    <div className="w-4 h-4 bg-accent-green border border-accent-green/50"></div>
+                    <span className="text-accent-green text-lg font-bold">★</span>
                     <span className="font-bold text-card-foreground">What type of business do you own?</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-accent-blue/5 border border-accent-blue/20">
-                    <div className="w-4 h-4 bg-accent-blue border border-accent-blue/50"></div>
+                    <span className="text-accent-blue text-lg font-bold">★</span>
                     <span className="font-bold text-card-foreground">Who is your target audience?</span>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-3 bg-accent-red/5 border border-accent-red/20">
-                    <div className="w-4 h-4 bg-accent-red border border-accent-red/50"></div>
+                    <span className="text-accent-red text-lg font-bold">★</span>
                     <span className="font-bold text-card-foreground">What products or services do you offer?</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-accent-yellow/5 border border-accent-yellow/20">
-                    <div className="w-4 h-4 bg-accent-yellow border border-accent-yellow/50"></div>
+                    <span className="text-accent-yellow text-lg font-bold">★</span>
                     <span className="font-bold text-card-foreground">Any specific marketing goals?</span>
                   </div>
                 </div>
@@ -232,16 +234,24 @@ function ChatInterface() {
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Tell us about your business, target audience, and marketing goals..."
-                className="min-h-[80px] border-2 border-border bg-card focus-visible:ring-0 focus-visible:border-accent-blue resize-none text-base font-medium placeholder:text-muted-foreground/70"
+                className="min-h-[80px] input-creative bg-card resize-none text-base font-medium placeholder:text-muted-foreground/70"
                 rows="3"
               />
               <Button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isLoading}
-                className="retro-button self-end h-16 w-16 bg-accent-blue text-white hover:bg-accent-blue/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="button-creative self-end h-16 w-16 text-white disabled:opacity-50 disabled:cursor-not-allowed"
                 size="icon"
               >
-                <Send className="h-6 w-6" />
+                {isLoading ? (
+                  <div className="loading-creative">
+                    <div className="loading-dot"></div>
+                    <div className="loading-dot"></div>
+                    <div className="loading-dot"></div>
+                  </div>
+                ) : (
+                  <Send className="h-6 w-6" />
+                )}
               </Button>
             </div>
           </div>

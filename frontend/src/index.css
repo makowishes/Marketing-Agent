@@ -294,4 +294,302 @@
     height: 35px;
     background: #8B4513;
   }
+
+  /* ======================================
+     ✨ CREATIVE WOW FACTOR ENHANCEMENTS ✨
+     Homie & Creative Design Elements
+     ====================================== */
+
+  /* Floating particles for ambient magic */
+  .particle {
+    @apply absolute rounded-full pointer-events-none;
+    background: linear-gradient(45deg, hsl(var(--google-blue) / 0.3), hsl(var(--google-green) / 0.3));
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .particle:nth-child(1) {
+    width: 8px; height: 8px;
+    top: 20%; left: 10%;
+    animation-delay: -1s;
+  }
+  .particle:nth-child(2) {
+    width: 12px; height: 12px;
+    top: 60%; left: 80%;
+    animation-delay: -3s;
+  }
+  .particle:nth-child(3) {
+    width: 6px; height: 6px;
+    top: 40%; left: 70%;
+    animation-delay: -5s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+    50% { transform: translateY(-20px) rotate(180deg); opacity: 0.8; }
+  }
+
+  /* Enhanced retro cards with creative depth */
+  .retro-card-creative {
+    @apply bg-card border-2 border-border shadow-sm relative overflow-hidden;
+    box-shadow:
+      4px 4px 0px hsl(var(--border)),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--card) / 0.95) 100%);
+  }
+
+  .retro-card-creative::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full pointer-events-none;
+    background: linear-gradient(45deg,
+      transparent 0%,
+      hsl(var(--google-blue) / 0.03) 25%,
+      transparent 50%,
+      hsl(var(--google-yellow) / 0.03) 75%,
+      transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .retro-card-creative:hover::before {
+    transform: translateX(100%);
+  }
+
+  .retro-card-creative:hover {
+    transform: translate(-3px, -3px) scale(1.02);
+    box-shadow:
+      8px 8px 0px hsl(var(--google-blue) / 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: hsl(var(--google-blue) / 0.6);
+  }
+
+  /* Creative typography with personality */
+  .title-creative {
+    @apply relative;
+    background: linear-gradient(45deg,
+      hsl(var(--google-blue)),
+      hsl(var(--google-green)),
+      hsl(var(--google-yellow)),
+      hsl(var(--google-red)));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Homie coffee steam effect */
+  .coffee-steam {
+    @apply absolute pointer-events-none;
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to top,
+      hsl(var(--google-blue) / 0.1),
+      transparent);
+    border-radius: 50%;
+    animation: steam 3s ease-in-out infinite;
+  }
+
+  .coffee-steam:nth-child(1) { left: 30%; animation-delay: 0s; }
+  .coffee-steam:nth-child(2) { left: 50%; animation-delay: 0.5s; }
+  .coffee-steam:nth-child(3) { left: 70%; animation-delay: 1s; }
+
+  @keyframes steam {
+    0% { transform: translateY(0) scaleX(1); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateY(-20px) scaleX(0.5); opacity: 0; }
+  }
+
+  /* Creative button interactions */
+  .button-creative {
+    @apply relative overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg,
+      hsl(var(--google-blue)),
+      hsl(var(--google-green)));
+    box-shadow:
+      0 4px 0 hsl(var(--google-blue) / 0.8),
+      0 8px 16px hsl(var(--google-blue) / 0.3);
+  }
+
+  .button-creative::before {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(45deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
+
+  .button-creative:hover::before {
+    transform: translateX(100%);
+  }
+
+  .button-creative:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 0 hsl(var(--google-blue) / 0.8),
+      0 12px 24px hsl(var(--google-blue) / 0.4);
+  }
+
+  .button-creative:active {
+    transform: translateY(2px);
+    box-shadow:
+      0 2px 0 hsl(var(--google-blue) / 0.8),
+      0 4px 8px hsl(var(--google-blue) / 0.3);
+  }
+
+  /* Cozy ambient lighting effects */
+  .ambient-glow {
+    @apply absolute pointer-events-none;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+      hsl(var(--google-yellow) / 0.1) 0%,
+      hsl(var(--google-orange) / 0.05) 40%,
+      transparent 70%);
+    animation: ambientPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes ambientPulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; }
+  }
+
+  /* Creative form inputs */
+  .input-creative {
+    @apply border-2 transition-all duration-300 relative;
+    background: linear-gradient(135deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--muted) / 0.3) 100%);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-creative:focus {
+    border-color: hsl(var(--google-blue));
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.1),
+      0 0 0 3px hsl(var(--google-blue) / 0.2),
+      0 4px 12px hsl(var(--google-blue) / 0.3);
+  }
+
+  /* Homie decorative elements */
+  .window {
+    @apply home-element;
+    top: 10%;
+    left: 15%;
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 100%);
+    border: 3px solid #8B4513;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .window::before {
+    content: '';
+    @apply absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #8B4513;
+  }
+
+  .window::after {
+    content: '';
+    @apply absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #8B4513;
+  }
+
+  .curtain {
+    @apply home-element;
+    top: 8%;
+    left: 12%;
+    width: 66px;
+    height: 20px;
+    background: linear-gradient(135deg, #DC143C 0%, #B22222 100%);
+    border-radius: 0 0 15px 15px;
+  }
+
+  .rug {
+    @apply home-element;
+    bottom: 10%;
+    left: 30%;
+    width: 100px;
+    height: 60px;
+    background: radial-gradient(ellipse,
+      #8B4513 0%,
+      #A0522D 40%,
+      #CD853F 100%);
+    border-radius: 50px;
+    transform: perspective(60px) rotateX(60deg);
+  }
+
+  .picture-frame {
+    @apply home-element;
+    top: 25%;
+    left: 80%;
+    width: 40px;
+    height: 30px;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    border: 2px solid #654321;
+    border-radius: 4px;
+  }
+
+  .picture-frame::before {
+    content: '';
+    @apply absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background: linear-gradient(45deg, #87CEEB, #98FB98, #F0E68C);
+    border-radius: 2px;
+  }
+
+  /* Interactive hover states for home elements */
+  .home-element:hover {
+    animation: wiggle 0.5s ease-in-out;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+  }
+
+  /* Loading animation with personality */
+  .loading-creative {
+    @apply flex items-center gap-2;
+  }
+
+  .loading-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(var(--google-blue));
+    animation: loadingBounce 1.4s infinite both;
+  }
+
+  .loading-dot:nth-child(1) { animation-delay: -0.32s; }
+  .loading-dot:nth-child(2) { animation-delay: -0.16s; }
+
+  @keyframes loadingBounce {
+    0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+    40% { transform: scale(1.2); opacity: 1; }
+  }
 }
