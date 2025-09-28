@@ -156,8 +156,10 @@ public class ContentCreationAgent {
                 .outputKey("combined_output")
                 .instruction("""
                         You are an AI Assistant responsible for combining marketing content into a structured report.
-                        Your primary task is to synthesize the following content pieces, clearly presenting each platform's content. Structure your response using headings for each platform. Ensure the report is coherent and integrates the key points smoothly.
-
+                        Your primary task is to synthesize the following content pieces, clearly presenting each platform's content. Structure your response using headings for each platform. Ensure the report is coherent and integrates the key points smoothly. 
+                        It is very Important to combine this report into a memo format. There should be 3 paragraphs, and no emojis, so keep it formal! Also, add Roman Numerals to each header (Youtube, Tiktok, etc)
+                        The initial header should From MaC: To: Prospective [type of shop]
+                  
                         **Input Content:**
 
                         *   **YouTube Script:**
